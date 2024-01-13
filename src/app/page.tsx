@@ -78,13 +78,13 @@ export default function Youtube() {
 
       case dateDesc:
         videoData.sort(
-          (a, b) => new Date(b.snippet.publishedAt) - new Date(a.snippet.publishedAt)
+          (a, b) => (new Date(b.snippet.publishedAt) as any) - (new Date(a.snippet.publishedAt) as any)
         )
         break
 
       case dateAsc:
         videoData.sort(
-          (a, b) => new Date(a.snippet.publishedAt) - new Date(b.snippet.publishedAt)
+          (a, b) => (new Date(a.snippet.publishedAt) as any) - (new Date(b.snippet.publishedAt) as any)
         )
         break
 
