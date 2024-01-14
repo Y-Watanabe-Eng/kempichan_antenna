@@ -159,7 +159,7 @@ export default function Youtube() {
       <header>
         <div className='h-28 bg-red-600 flex items-center justify-center'>
           <div className='sm:w-8/12 w-10/12'>
-            <h1 className='sm:text-4xl text-3xl text-white'>けんぴ。ちゃんテナ</h1>
+            <h1 className='sm:text-4xl text-3xl text-white'>けんぴ。ちゃんてな</h1>
             <p className='pt-2 pl-2 text-gray-800'>from Youtube</p>
           </div>
         </div>
