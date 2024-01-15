@@ -11,7 +11,6 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
-import { Suspense } from 'react'
 import Loading from './loading'
 
 
@@ -54,6 +53,8 @@ export default function Youtube() {
 //JSONファイルの取得
   const [videoData, setVideoData] = useState<items[]>([])
 
+  const [loading, setLoading] = useState(true)
+
   useEffect(() =>{
     (async() => {
       try{
@@ -61,13 +62,12 @@ export default function Youtube() {
         setVideoData(fetchData)
         setPageData(fetchData.slice(0, pageRecord))
         console.log(fetchData)
+        setLoading(false)
       } catch (error) {
         console.error("Error Fetching Data:", error)
       }
     })()
   }, [])
-
-  console.log("client:" + new Date())
 
 
 //ソート
@@ -167,7 +167,10 @@ export default function Youtube() {
         </div>
       </header>
 
-      <Suspense fallback={<Loading />}>
+      {loading ? (
+        <Loading />
+      ) : (
+
       <main className="flex min-h-screen flex-col items-center justify-center py-10 bg-gradient-to-br from-white via-blue-100 to-red-100">
         
         <div className='sm:w-8/12 w-10/12'>
@@ -196,8 +199,6 @@ export default function Youtube() {
             </Box>
           </div>
         </div>
-
-
 
 
         <Stack spacing={2}>
@@ -256,7 +257,8 @@ export default function Youtube() {
         </Stack>
 
       </main>
-      </Suspense>
+
+      )}
 
     </>
   )

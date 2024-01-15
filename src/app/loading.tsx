@@ -5,6 +5,8 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 
 
+console.log('ロード中')
+
 export default function Loading() {
 
 
