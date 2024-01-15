@@ -2,7 +2,6 @@ import { Suspense } from 'react'
 import './globals.css'
 import Loading from './loading'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'けんぴ。ちゃんてな',
