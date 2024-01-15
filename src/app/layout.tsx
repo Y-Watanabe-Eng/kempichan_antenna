@@ -1,6 +1,4 @@
-import type { Metadata } from 'next'
 import { Suspense } from 'react'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import Loading from './loading'
 
@@ -18,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className={inter.className}>
+      <body>
         <Suspense fallback={<Loading />}>
           {children}
         </Suspense>
