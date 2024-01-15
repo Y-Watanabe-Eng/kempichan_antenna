@@ -11,6 +11,8 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
+import { Suspense } from 'react'
+import Loading from './loading'
 
 
 interface items {
@@ -165,7 +167,7 @@ export default function Youtube() {
         </div>
       </header>
 
-
+      <Suspense fallback={<Loading />}>
       <main className="flex min-h-screen flex-col items-center justify-center py-10 bg-gradient-to-br from-white via-blue-100 to-red-100">
         
         <div className='sm:w-8/12 w-10/12'>
@@ -254,6 +256,7 @@ export default function Youtube() {
         </Stack>
 
       </main>
+      </Suspense>
 
     </>
   )
